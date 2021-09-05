@@ -32,3 +32,16 @@ function love.mousepressed(mx, my, button)
     end
 end
 
+function love.wheelmoved(x, y)
+    if y > 0 then
+        volume = volume + 0.1
+        if volume >= 1 then
+            volume = 1
+        end
+    elseif y < 0 then
+        volume = volume - 0.1
+        if volume < 0.1 then
+            volume = 0
+        end
+    end
+end
